@@ -1,77 +1,72 @@
+"use client";
+import { useState } from "react";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav class="bg-white border-gray-200 fixed w-full dark:bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/images/logo.png" class="h-12" alt="Pantai Bomo Logo" />
+    <nav className="bg-white fixed w-full top-0 left-0 z-50 shadow-sm">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+        <a href="#home" className="flex items-center space-x-3">
+          <img
+            src="/images/logo.png"
+            className="h-10 md:h-12"
+            alt="Pantai Bomo Logo"
+          />
         </a>
+
         <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
         >
-          <span class="sr-only">Open main menu</span>
           <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
             fill="none"
-            viewBox="0 0 17 14"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Contact
-              </a>
-            </li>
+
+        <div
+          className={`transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible md:transition-none 
+    ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} 
+    absolute top-full left-0 w-full bg-white md:static md:block md:w-auto md:max-h-full md:opacity-100`}
+        >
+          <ul className="flex flex-col md:flex-row md:space-x-8 md:items-center p-4 md:p-0 text-sm font-medium">
+            {[
+              { href: "#home", label: "Home" },
+              { href: "#fasilitas", label: "Fasilitas" },
+              { href: "#galeri", label: "Galeri" },
+              { href: "#layanan", label: "Layanan" },
+              { href: "#contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  className="block py-2 px-3 text-gray-700 hover:text-blue-500"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
