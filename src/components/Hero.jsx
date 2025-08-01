@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/hero/hero1.heic",
-  "/images/hero/hero2.heic",
-  "/images/hero/hero3.heic",
+  "/images/hero/hero1.jpg",
+  "/images/hero/hero2.jpg",
+  "/images/hero/hero3.jpg",
 ];
 
 export default function Hero() {

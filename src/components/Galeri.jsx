@@ -12,7 +12,7 @@ export default function Galeri() {
       <div className="grid md:px-34 px-4 md:grid-cols-4 gap-4">
         <div className="relative col-span-1">
           <img
-            src="/images/fasilitas/mushola.HEIC"
+            src="/images/fasilitas/mushola.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -22,7 +22,7 @@ export default function Galeri() {
 
         <div className="relative col-span-2 row-span-2">
           <img
-            src="/images/fasilitas/pendopo.HEIC"
+            src="/images/fasilitas/pendopo.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -32,7 +32,7 @@ export default function Galeri() {
 
         <div className="relative col-span-1 row-span-2">
           <img
-            src="/images/fasilitas/kamar mandi.HEIC"
+            src="/images/fasilitas/kamar mandi.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -42,7 +42,7 @@ export default function Galeri() {
 
         <div className="relative col-span-1 row-span-2">
           <img
-            src="/images/fasilitas/pos pantau.HEIC"
+            src="/images/fasilitas/pos pantau.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -52,7 +52,7 @@ export default function Galeri() {
 
         <div className="relative">
           <img
-            src="/images/fasilitas/kantor sekretariat.HEIC"
+            src="/images/fasilitas/kantor sekretariat.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -62,7 +62,7 @@ export default function Galeri() {
 
         <div className="relative">
           <img
-            src="/images/fasilitas/kantin.HEIC"
+            src="/images/fasilitas/kantin.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
@@ -72,7 +72,7 @@ export default function Galeri() {
 
         <div className="relative md:col-span-1 row-start-1 ">
           <img
-            src="/images/fasilitas/parkir.HEIC"
+            src="/images/fasilitas/parkir.jpg"
             className="rounded-xl w-full h-full object-cover"
           />
           <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
