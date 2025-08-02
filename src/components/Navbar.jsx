@@ -51,11 +51,12 @@ const Navbar = () => {
         >
           <ul className="flex flex-col md:flex-row md:space-x-8 md:items-center p-4 md:p-0 text-sm font-medium">
             {[
-              { href: "#home", label: "Home" },
+              { href: "#home", label: "Utama" },
+              { href: "#about", label: "Tentang" },
               { href: "#fasilitas", label: "Fasilitas" },
               { href: "#galeri", label: "Galeri" },
               { href: "#layanan", label: "Layanan" },
-              { href: "#contact", label: "Contact" },
+              { href: "#contact", label: "Kontak" },
             ].map(({ href, label }) => (
               <li key={href}>
                 <a

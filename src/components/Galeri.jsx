@@ -1,10 +1,3 @@
-const galeri = [
-  "/images/galeri-1.jpg",
-  "/images/galeri-2.jpg",
-  "/images/galeri-3.jpg",
-];
-import Image from "next/image";
-
 export default function Galeri() {
   return (
     <section id="galeri" className="py-10 scroll-smooth">
