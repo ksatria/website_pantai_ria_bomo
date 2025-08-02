@@ -1,4 +1,4 @@
-export default function CardItem({ image, title, desc, tag }) {
+export default function CardItem({ image, title, desc}) {
   return (
     <div className="max-w-sm h-120 md:h-100 xl:h-120 bg-white border border-gray-200 rounded-lg shadow-sm ">
       <a href="#">

@@ -1,35 +1,23 @@
+import { about_translations } from "@/utils/about_translations";
 import { FaPhoneVolume } from "react-icons/fa";
-
-export default function About() {
+export default function About({ language = "id" }) {
+  const t = about_translations[language];
   return (
     <section id="about" className="bg-white pt-30 px-4 md:px-34 scroll-smooth">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-[#1E1B4B] mb-2">
-            Temukan Ketenangan di Pantai Ria Bomo
+            {t.heading}
           </h1>
-          <p className="text-sm md:text-lg text-gray-600">
-            Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan
-            Tak Terlupakan di Tepi Pantai.
-          </p>
+          <p className="text-sm md:text-lg text-gray-600">{t.subheading}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-2">
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-[#1E1B4B] mb-4">
-              Pantai Ria Bomo: Surga Tersembunyi di Pesisir Banyuwangi
+              {t.descHeading}
             </h2>
             <p className=" text-sm md:text-lg text-gray-700 mb-8 pr-4">
-              Pantai Ria Bomo, sebuah permata tersembunyi di ujung timur Jawa,
-              menghadirkan keindahan alam yang masih asri dan ketenangan yang
-              memikat. Berlokasi di Desa Bomo, Kecamatan Blimbingsari, Kabupaten
-              Banyuwangi, pantai ini menawarkan pengalaman liburan yang berbeda
-              dari biasanya. Menjadi destinasi yang ideal untuk menyambut momen
-              spesial, Pantai Ria Bomo adalah tempat yang sempurna untuk
-              menikmati waktu bersama keluarga dan orang terdekat. Rasakan
-              sensasi ngabuburit dengan pemandangan matahari terbenam yang
-              memukau, atau nikmati kebersamaan saat halal bihalal di bawah
-              langit senja. Berbagai kuliner khas lokal juga siap memanjakan
-              lidah Anda.
+              {t.desc}
             </p>
             {/* <div className="flex items-center gap-4 mt-6">
               <img
@@ -47,23 +35,15 @@ export default function About() {
           </div>
           <div className="bg-[#F9FAFB] border border-[#FBBF24] rounded-lg p-6">
             <h3 className="text-xl font-bold text-[#FBBF24] mb-4">
-              Jadwal Mingguan
+              {t.schedule}
             </h3>
             <ul className="divide-y divide-gray-300 mb-6">
-              {[
-                "Senin",
-                "Selasa",
-                "Rabu",
-                "Kamis",
-                "Jumat",
-                "Sabtu",
-                "Minggu",
-              ].map((hari) => (
+              {about_translations[language].days.map((day) => (
                 <li
-                  key={hari}
+                  key={day}
                   className="flex justify-between text-sm xl:text-lg py-2 text-gray-700"
                 >
-                  <span>{hari}</span>
+                  <span>{day}</span>
                   <span>8:00am–5:00pm</span>
                 </li>
               ))}
@@ -73,7 +53,7 @@ export default function About() {
               <FaPhoneVolume className=" text-lg xl:text-4xl" />
               <div className="pl-2">
                 <span className="text-gray-700 text-sm xl:text-lg font-medium">
-                  Telepon Sekarang
+                  {t.callNow}:
                 </span>
                 <div className="text-[#FBBF24] font-bold text-sm xl:text-lg">
                   (+62) 812-1635-7836

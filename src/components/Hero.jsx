@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { hero_translations } from "@/utils/hero_translations";
 
 const images = [
   "/images/hero/hero1.jpg",
@@ -7,7 +8,7 @@ const images = [
   "/images/hero/hero3.jpg",
 ];
 
-export default function Hero() {
+export default function Hero({ language = "id" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showContent, setShowContent] = useState(true);
 
@@ -26,6 +27,8 @@ export default function Hero() {
     }, 4000);
     return () => clearInterval(interval);
   }, [currentIndex]);
+
+  const t = hero_translations[language];
 
   return (
     <section
@@ -51,19 +54,18 @@ export default function Hero() {
           showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <h1 className="mb-4 text-xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl">
-          Temukan Kembali <br /> Ketenangan Anda di Sini
+        <h1 className="mb-4 text-xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl whitespace-pre-line">
+          {t.title}
         </h1>
         <p className="mb-8 text-sm font-normal text-gray-200 lg:text-xl sm:px-16 lg:px-48">
-          Jauh dari hiruk pikuk kota, nikmati kesejukan di bawah pohon cemara
-          dan debur ombak yang menenangkan jiwa.
+          {t.desc}
         </p>
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <a
             href="#"
             className="w-fit inline-flex justify-center items-center px-3 text-xs py-3 sm:px-5 sm:text-base font-medium text-center text-white rounded-lg bg-[#D35F1C] hover:bg-[#BC4F10] transition-all duration-500"
           >
-            Temukan Kedamaian Anda
+            {t.button}
           </a>
         </div>
       </div>

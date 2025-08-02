@@ -1,6 +1,8 @@
+import { footer_translations } from "@/utils/footer_translations";
 import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa";
 
-export default function Footer() {
+export default function Footer({ language = "id" }) {
+  const t = footer_translations[language];
   return (
     <section id="contact" className="w-full pt-20 scroll-smooth">
       <div className="w-full h-[450px]">
@@ -20,7 +22,7 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
             <div className="flex-1">
               <h2 className="text-lg font-semibold text-[#1E1B4B] mb-4">
-                Kontak
+                {t.kontak}
               </h2>
               <ul className="space-y-3 text-[#1E1B4B]">
                 <li className="flex items-center gap-2">
@@ -44,7 +46,7 @@ export default function Footer() {
 
             <div className="flex-1">
               <h2 className="text-lg font-semibold text-[#1E1B4B] mb-4">
-                Lokasi
+                {t.lokasi}
               </h2>
               <p className="text-[#1E1B4B]">
                 Jl. Pantai Bomo, Dusun Krajan, Kec Rogojampi,

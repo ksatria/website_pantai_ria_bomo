@@ -6,53 +6,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useRef } from "react";
 import CardItem from "./CardItem";
+import { layanan_translations } from "@/utils/layanan_translations";
 
-const data = [
-  {
-    title: "Paket Private Family Trip",
-    desc: "Kuliner seafood, bahan fresh, kenikmatan di tepi laut.",
-    image: "/images/layanan/image.png",
-    tag: "Seafood",
-  },
-  {
-    title: "Paket Tour Open Trip",
-    desc: "Eksplorasi keberanian anak-anak di alam terbuka.",
-    image: "/images/fasilitas/kantin.jpg",
-    tag: "Rp 15.000",
-  },
-  {
-    title: "Paket Mancing Bagan",
-    desc: "Bernyanyi dan berjoget di tepi pantai.",
-    image: "/images/panggung.jpg",
-    tag: "Live Music",
-  },
-  {
-    title: "Paket Mancing Premium",
-    desc: "Bernyanyi dan berjoget di tepi pantai.",
-    image: "/images/panggung.jpg",
-    tag: "Live Music",
-  },
-  {
-    title: "Paket Mancing Standard",
-    desc: "Bernyanyi dan berjoget di tepi pantai.",
-    image: "/images/panggung.jpg",
-    tag: "Live Music",
-  },
-  {
-    title: "Paket Makan",
-    desc: "Bernyanyi dan berjoget di tepi pantai.",
-    image: "/images/panggung.jpg",
-    tag: "Live Music",
-  },
-  {
-    title: "Paket Pendopo",
-    desc: "Bernyanyi dan berjoget di tepi pantai.",
-    image: "/images/panggung.jpg",
-    tag: "Live Music",
-  },
+const image = [
+  "/images/layanan/image.png",
+  "/images/fasilitas/kantin.jpg",
+  "/images/panggung.jpg",
+  "/images/panggung.jpg",
+  "/images/panggung.jpg",
+  "/images/panggung.jpg",
+  "/images/panggung.jpg",
 ];
 
-export default function CardCarousel() {
+export default function CardCarousel({ language = "id" }) {
   const swiperRef = useRef(null);
 
   const handlePrev = () => {
@@ -62,6 +28,8 @@ export default function CardCarousel() {
   const handleNext = () => {
     if (swiperRef.current) swiperRef.current.slideNext();
   };
+
+  const t = layanan_translations[language];
 
   return (
     <section id="layanan" className="scroll-smooth">
@@ -132,9 +100,13 @@ export default function CardCarousel() {
               1024: { slidesPerView: 3 },
             }}
           >
-            {data.map((item, index) => (
+            {t.map((item, index) => (
               <SwiperSlide key={index}>
-                <CardItem {...item} />
+                <CardItem
+                  image={image[index]}
+                  title={item.title}
+                  desc={item.desc}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
