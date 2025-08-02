@@ -34,7 +34,7 @@ export default function CardCarousel({ language = "id" }) {
   return (
     <section id="layanan" className="scroll-smooth">
       <h2 className="text-3xl font-semibold ml-4 md:ml-34 py-10 mb-6">
-        Layanan
+        {language === "en" ? "Services" : "Layanan"}
       </h2>
       <div className="relative w-full flex justify-center">
         <button
