@@ -33,8 +33,8 @@ export default function About({ language = "id" }) {
               </div>
             </div> */}
           </div>
-          <div className="bg-[#F9FAFB] border border-[#FBBF24] rounded-lg p-6">
-            <h3 className="text-xl font-bold text-[#FBBF24] mb-4">
+          <div className="bg-[#F9FAFB] border border-[#D35F1C] rounded-lg p-6">
+            <h3 className="text-xl font-bold text-[#D35F1C] mb-4">
               {t.schedule}
             </h3>
             <ul className="divide-y divide-gray-300 mb-6">
@@ -55,7 +55,7 @@ export default function About({ language = "id" }) {
                 <span className="text-gray-700 text-sm xl:text-lg font-medium">
                   {t.callNow}:
                 </span>
-                <div className="text-[#FBBF24] font-bold text-sm xl:text-lg">
+                <div className="text-[#D35F1C] font-bold text-sm xl:text-lg">
                   (+62) 812-1635-7836
                 </div>
               </div>

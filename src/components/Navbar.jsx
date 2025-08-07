@@ -59,6 +59,7 @@ export default function Navbar({ language, setLanguage }) {
               { href: "#fasilitas", label: "fasilitas" },
               { href: "#galeri", label: "galeri" },
               { href: "#layanan", label: "layanan" },
+              { href: "#aktifitas", label: "aktifitas" },
               { href: "#contact", label: "contact" },
             ].map(({ href, label }) => (
               <li key={href}>
