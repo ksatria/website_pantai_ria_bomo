@@ -9,13 +9,13 @@ import CardItem from "./CardItem";
 import { layanan_translations } from "@/utils/layanan_translations";
 
 const image = [
-  "/images/layanan/image.png",
-  "/images/fasilitas/kantin.jpg",
-  "/images/panggung.jpg",
-  "/images/panggung.jpg",
-  "/images/panggung.jpg",
-  "/images/panggung.jpg",
-  "/images/panggung.jpg",
+  "/images/layanan/paket private family trip.JPG",
+  "/images/layanan/paket tour open trip.JPG",
+  "/images/layanan/paket mancing bagan.JPG",
+  "/images/layanan/paket mancing premium.JPG",
+  "/images/layanan/paket mancing standard.JPG",
+  "/images/layanan/paket kuliner.JPG",
+  "/images/layanan/paket pendopo.JPG",
 ];
 
 export default function CardCarousel({ language = "id" }) {
@@ -97,7 +97,7 @@ export default function CardCarousel({ language = "id" }) {
             }}
             breakpoints={{
               768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              1224: { slidesPerView: 3 },
             }}
           >
             {t.map((item, index) => (
