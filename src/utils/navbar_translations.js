@@ -1,3 +1,5 @@
+import Pengurus from "@/components/Pengurus";
+
 export const navbar_translations = {
   id: {
     home: "Utama",
@@ -6,6 +8,7 @@ export const navbar_translations = {
     galeri: "Galeri",
     layanan: "Layanan",
     aktifitas: "Aktifitas",
+    pengurus: "Pengurus",
     contact: "Kontak",
     lang: "Bahasa",
   },
@@ -16,6 +19,7 @@ export const navbar_translations = {
     galeri: "Gallery",
     layanan: "Services",
     aktifitas: "Activities",
+    pengurus: "Committee",
     contact: "Contact",
     lang: "Language",
   },

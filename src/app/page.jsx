@@ -7,8 +7,8 @@ import Galeri from "@/components/Galeri";
 import Layanan from "@/components/Layanan";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import StrukturOrganisasi from "@/components/StrukturOrganisasi";
 import Activities from "@/components/Activities";
+import Pengurus from "@/components/Pengurus";
 
 export default function Home() {
   const [language, setLanguage] = useState("id");
@@ -34,7 +34,7 @@ export default function Home() {
       <Galeri language={language} />
       <Layanan language={language} />
       <Activities language={language} />
-      {/* <StrukturOrganisasi language={language} /> */}
+      <Pengurus language={language} />
       <Footer language={language} />
     </main>
   );
