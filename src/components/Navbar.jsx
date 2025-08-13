@@ -12,7 +12,7 @@ export default function Navbar({ language, setLanguage }) {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
         <a href="#home" className="flex items-center space-x-3">
           <img
-            src="/images/logo.png"
+            src="/images/logos.png"
             className="h-10 md:h-12"
             alt="Pantai Bomo Logo"
           />

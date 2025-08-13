@@ -60,7 +60,7 @@ export default function Footer({ language = "id" }) {
                 Pantai Ria Bomo
               </h2>
               <img
-                src="/images/logo.png"
+                src="/images/logos.png"
                 alt="Bomo Beach Logo"
                 className="w-40 h-auto"
               />

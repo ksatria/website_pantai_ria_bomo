@@ -39,7 +39,7 @@ export default function CardCarousel({ language = "id" }) {
       <div className="relative w-full flex justify-center">
         <button
           onClick={handlePrev}
-          className="absolute hidden md:block left-12 top-1/2 -translate-y-1/2 z-10 bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+          className="absolute hidden md:block left-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
             className="w-6 h-6 text-white "
@@ -62,7 +62,7 @@ export default function CardCarousel({ language = "id" }) {
 
         <button
           onClick={handleNext}
-          className="absolute hidden md:block right-12 top-1/2 -translate-y-1/2 z-10 bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+          className="absolute hidden md:block right-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
             className="w-6 h-6 text-white "
