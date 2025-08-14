@@ -11,7 +11,6 @@ export default function Navbar({ language, setLanguage }) {
   const [lastScrollY, setLastScrollY] = useState(0);
   const t = navbar_translations[language];
 
-  // Highlight menu aktif
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const handleScroll = () => {
@@ -32,13 +31,13 @@ export default function Navbar({ language, setLanguage }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowNavbar(false); 
+      setShowNavbar(false);
 
       if (scrollTimeout) clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(() => {
         setShowNavbar(true);
-      }, 300); 
+      }, 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -110,7 +109,7 @@ export default function Navbar({ language, setLanguage }) {
 
           <div
             className={`transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible md:transition-none 
-            ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} 
+            ${isOpen ? "opacity-100" : "max-h-0 opacity-0"} 
             absolute top-full left-0 w-full bg-white md:static md:block md:w-auto md:max-h-full md:opacity-100`}
           >
             <ul className="flex flex-col md:flex-row md:space-x-8 md:items-center p-4 md:p-0 text-sm font-medium">
