@@ -38,7 +38,7 @@ export default function Home() {
       <Pengurus language={language} />
       <Footer language={language} />
 
-      <div className="fixed bottom-6 right-6 flex flex-col gap-4">
+      <div className="fixed bottom-6 z-10 right-6 flex flex-col gap-4">
         <a
           href="https://forms.gle/V6WgF3JSJaK3eXcR8"
           target="_blank"

@@ -1,5 +1,7 @@
+"use client";
 import { galeri_translations } from "@/utils/galeri_translations";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const galeriImages = [
   "/images/fasilitas/mushola.jpg",
@@ -13,7 +15,6 @@ const galeriImages = [
 
 export default function Galeri({ language = "id" }) {
   const t = galeri_translations[language];
-
   const [modalOpen, setModalOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(null);
 
@@ -27,14 +28,38 @@ export default function Galeri({ language = "id" }) {
     setActiveImage(null);
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="galeri" className="py-10 scroll-smooth">
-      <h2 className="text-3xl font-semibold ml-4 md:ml-34 mb-6">{t.title}</h2>
-      <div className="grid md:px-34 px-4 md:grid-cols-4 gap-4">
+      <motion.h2
+        className="text-3xl font-semibold ml-4 md:ml-34 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        {t.title}
+      </motion.h2>
+
+      <motion.div
+        className="grid md:px-34 px-4 md:grid-cols-4 gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {galeriImages.map((img, idx) => (
-          <div
+          <motion.div
             key={img}
-            className={`relative overflow-hidden rounded-xl  cursor-pointer ${
+            className={`relative overflow-hidden rounded-xl cursor-pointer ${
               idx === 1
                 ? "col-span-2 row-span-2"
                 : idx === 2 || idx === 3
@@ -43,43 +68,53 @@ export default function Galeri({ language = "id" }) {
                 ? "md:col-span-1 row-start-1"
                 : ""
             }`}
+            variants={itemVariants}
             onClick={() => openModal(img)}
           >
             <img
               src={img}
-              className="w-full h-full object-cover transition-transform duration-200 hover:scale-105 "
+              className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
               alt={t.items[idx].label}
             />
-            <p className="absolute bottom-2 left-2 text-white text-smx px-2 py-1 rounded">
+            <p className="absolute bottom-2 left-2 text-white text-sm px-2 py-1 rounded bg-black/40">
               {t.items[idx].label}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {modalOpen && (
-        <div
-          className="fixed inset-0 bg-black/70 flex justify-center items-center z-50"
-          onClick={closeModal}
-        >
-          <div
-            className="max-w-4xl w-full px-4"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex justify-center items-center z-50"
+            onClick={closeModal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <img
-              src={activeImage}
-              alt="Preview"
-              className="rounded-xl w-full h-auto max-h-[90vh] object-contain"
-            />
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-white text-3xl font-bold"
+            <motion.div
+              className="max-w-4xl w-full px-4 relative"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              &times;
-            </button>
-          </div>
-        </div>
-      )}
+              <img
+                src={activeImage}
+                alt="Preview"
+                className="rounded-xl w-full h-auto max-h-[90vh] object-contain"
+              />
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-white text-3xl font-bold"
+              >
+                &times;
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

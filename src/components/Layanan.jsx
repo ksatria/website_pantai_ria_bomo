@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { useRef } from "react";
 import CardItem from "./CardItem";
 import { layanan_translations } from "@/utils/layanan_translations";
+import { motion } from "framer-motion";
 
 const image = [
   "/images/layanan/paket private family trip.JPG",
@@ -33,20 +34,24 @@ export default function CardCarousel({ language = "id" }) {
 
   return (
     <section id="layanan" className="scroll-smooth">
-      <h2 className="text-3xl font-semibold ml-4 md:ml-34 py-10 mb-6">
+      <motion.h2
+        className="text-3xl font-semibold ml-4 md:ml-34 py-10 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         {language === "en" ? "Services" : "Layanan"}
-      </h2>
+      </motion.h2>
+
       <div className="relative w-full flex justify-center">
         <button
           onClick={handlePrev}
           className="absolute hidden md:block left-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
-            className="w-6 h-6 text-white "
-            aria-hidden="true"
+            className="w-6 h-6 text-white"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -65,11 +70,8 @@ export default function CardCarousel({ language = "id" }) {
           className="absolute hidden md:block right-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
-            className="w-6 h-6 text-white "
-            aria-hidden="true"
+            className="w-6 h-6 text-white"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
             fill="none"
             viewBox="0 0 24 24"
           >
@@ -86,7 +88,7 @@ export default function CardCarousel({ language = "id" }) {
         <div className="w-full max-w-7xl px-4 md:px-33 xl:px-13">
           <Swiper
             modules={[Pagination]}
-            spaceBetween={16}
+            spaceBetween={20}
             slidesPerView={1}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
@@ -94,6 +96,8 @@ export default function CardCarousel({ language = "id" }) {
             pagination={{
               el: ".custom-pagination",
               clickable: true,
+              bulletClass: "swiper-pagination-bullet bg-[#D35F1C] opacity-50",
+              bulletActiveClass: "swiper-pagination-bullet-active opacity-100",
             }}
             breakpoints={{
               768: { slidesPerView: 2 },
@@ -102,11 +106,18 @@ export default function CardCarousel({ language = "id" }) {
           >
             {t.map((item, index) => (
               <SwiperSlide key={index}>
-                <CardItem
-                  image={image[index]}
-                  title={item.title}
-                  desc={item.desc}
-                />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <CardItem
+                    image={image[index]}
+                    title={item.title}
+                    desc={item.desc}
+                  />
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
