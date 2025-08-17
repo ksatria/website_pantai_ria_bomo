@@ -42,7 +42,7 @@ export default function Home() {
         <a
           href="https://forms.gle/V6WgF3JSJaK3eXcR8"
           target="_blank"
-          className="relative w-16 h-16 rounded-full bg-[#D35F1C] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+          className="relative w-16 h-16 rounded-full bg-[#00AEEF] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         >
           <FaRegSmile className="w-10 h-10 text-white" />
         </a>
