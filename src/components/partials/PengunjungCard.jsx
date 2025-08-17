@@ -9,33 +9,24 @@ export default function PengunjungCard({ language = "id" }) {
   const t = footer_translations[language];
 
   useEffect(() => {
-    const today = new Date().toLocaleDateString();
-
     let total = parseInt(localStorage.getItem("totalCount") || "0");
-    const hasVisited = localStorage.getItem("hasVisited");
-
-    if (!hasVisited) {
-      total += 1;
-      localStorage.setItem("totalCount", total);
-      localStorage.setItem("hasVisited", "true");
-    }
-
+    total += 1;
     setTotalCount(total);
+    localStorage.setItem("totalCount", total);
 
-    let todayVisits = parseInt(localStorage.getItem("todayCount") || "0");
+    const today = new Date().toLocaleDateString();
     const lastVisitDate = localStorage.getItem("lastVisitDate");
+    let todayVisits = parseInt(localStorage.getItem("todayCount") || "0");
 
-    if (lastVisitDate !== today) {
+    if (lastVisitDate === today) {
+      todayVisits += 1;
+    } else {
       todayVisits = 1;
       localStorage.setItem("lastVisitDate", today);
-    } else if (!localStorage.getItem("todayVisited")) {
-      todayVisits += 1;
     }
 
-    localStorage.setItem("todayCount", todayVisits);
-    localStorage.setItem("todayVisited", "true");
-
     setTodayCount(todayVisits);
+    localStorage.setItem("todayCount", todayVisits);
   }, []);
 
   return (
