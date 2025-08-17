@@ -1,41 +1,30 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Counter } from "counterapi"; // perlu dipasang via npm
 import { footer_translations } from "@/utils/footer_translations";
 
 export default function PengunjungCard({ language = "id" }) {
-  const [todayCount, setTodayCount] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
-
+  const [today, setToday] = useState(0);
+  const [total, setTotal] = useState(0);
   const t = footer_translations[language];
 
   useEffect(() => {
-    const today = new Date().toLocaleDateString();
+    const counter = new Counter({ workspace: "bojog" });
 
-    let total = parseInt(localStorage.getItem("totalCount") || "0");
-    const hasVisited = localStorage.getItem("hasVisited");
+    // Hit total global
+    counter
+      .up("pantai-ria-bomo")
+      .then((res) => setTotal(res.value))
+      .catch((err) => console.error("Error hit total:", err));
 
-    if (!hasVisited) {
-      total += 1;
-      localStorage.setItem("totalCount", total);
-      localStorage.setItem("hasVisited", "true");
-    }
-
-    setTotalCount(total);
-
-    let todayVisits = parseInt(localStorage.getItem("todayCount") || "0");
-    const lastVisitDate = localStorage.getItem("lastVisitDate");
-
-    if (lastVisitDate !== today) {
-      todayVisits = 1;
-      localStorage.setItem("lastVisitDate", today);
-    } else if (!localStorage.getItem("todayVisited")) {
-      todayVisits += 1;
-    }
-
-    localStorage.setItem("todayCount", todayVisits);
-    localStorage.setItem("todayVisited", "true");
-
-    setTodayCount(todayVisits);
+    // Hit khusus hari ini
+    const todayKey = `pantai-ria-bomo-${
+      new Date().toISOString().split("T")[0]
+    }`;
+    counter
+      .up(todayKey)
+      .then((res) => setToday(res.value))
+      .catch((err) => console.error("Error hit today:", err));
   }, []);
 
   return (
@@ -49,10 +38,10 @@ export default function PengunjungCard({ language = "id" }) {
       <h2 className="font-semibold mb-4">{t.pengunjung}</h2>
       <ul className="space-y-2">
         <li>
-          {t.hari_ini}: {todayCount}
+          {t.hari_ini}: {today}
         </li>
         <li>
-          {t.jumlah}: {totalCount}
+          {t.jumlah}: {total}
         </li>
       </ul>
     </motion.div>

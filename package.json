@@ -10,6 +10,7 @@
     "postinstall": "flowbite-react patch"
   },
   "dependencies": {
+    "counterapi": "^2.1.2",
     "flowbite-react": "^0.11.9",
     "framer-motion": "^12.23.12",
     "next": "15.4.2",
