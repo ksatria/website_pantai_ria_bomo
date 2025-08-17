@@ -92,7 +92,7 @@ export default function Footer({ language = "id" }) {
                 </p>
               </motion.div>
             </div>
-            <div className="w-full h-[1px] md:w-[1px] md:h-36  bg-white"></div>
+            {/* <div className="w-full h-[1px] md:w-[1px] md:h-36  bg-white"></div> */}
 
             {/* <PengunjungCard language={language} /> */}
           </div>
