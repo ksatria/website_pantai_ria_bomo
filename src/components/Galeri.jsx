@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const galeriImages = [
-  "/images/galeri/Mushola1.jpg",
-  "/images/galeri/Pendopo1.jpg",
-  "/images/galeri/Kamar_mandi1.jpg",
-  "/images/galeri/Pos_pantau1.jpg",
-  "/images/galeri/Kantor_sekretariat1.jpg",
-  "/images/galeri/Kantin1.jpg",
-  "/images/galeri/Parkir1.jpg",
+  "/images/galeri/Mushola2.jpg",
+  "/images/galeri/Pendopo2.jpg",
+  "/images/galeri/Kamar mandi2.jpg",
+  "/images/galeri/Pos pantau2.jpg",
+  "/images/galeri/Kantor sekretariat2.jpg",
+  "/images/galeri/Kantin2.jpg",
+  "/images/galeri/Parkir2.jpg",
 ];
 
 export default function Galeri({ language = "id" }) {
