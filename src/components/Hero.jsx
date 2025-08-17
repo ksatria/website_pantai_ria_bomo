@@ -4,9 +4,9 @@ import { hero_translations } from "@/utils/hero_translations";
 import { motion } from "framer-motion";
 
 const images = [
-  "/images/hero/hero1.jpg",
-  "/images/hero/hero2.jpg",
-  "/images/hero/hero3.jpg",
+  "/images/hero/hero-1.jpg",
+  "/images/hero/hero-2.jpg",
+  "/images/hero/hero-3.jpg",
 ];
 
 export default function Hero({ language = "id" }) {
@@ -51,6 +51,11 @@ export default function Hero({ language = "id" }) {
           />
         ))}
       </div>
+      <img
+        src="/images/hero/Vector.png"
+        alt=""
+        className="absolute bottom-0 z-20 h-4 md:h-auto"
+      />
 
       <motion.div
         className={`relative z-10 px-4 mx-auto max-w-screen-xl text-center text-white py-24 lg:py-56`}

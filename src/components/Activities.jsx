@@ -30,16 +30,19 @@ export default function Activities({ language = "id" }) {
   };
 
   return (
-    <section id="aktifitas" className="py-10 scroll-smooth">
-      <motion.h2
-        className="text-3xl font-semibold ml-4 md:ml-34 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {t.title}
-      </motion.h2>
+    <section id="aktifitas" className="py-18 scroll-smooth">
+        <div className="flex flex-col pb-12 items-center">
+        <motion.h2
+          className="text-3xl font-semibold text-center mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {t.title}
+        </motion.h2>
+        <div className="h-1 w-36 bg-yellow-400"></div>
+      </div>
 
       <div className="grid md:px-34 px-4 grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
         {activitiesImages.map((img, idx) => (

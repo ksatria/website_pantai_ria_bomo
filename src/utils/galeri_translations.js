@@ -1,6 +1,6 @@
 export const galeri_translations = {
   id: {
-    title: "Galeri",
+    title: "GALERI",
     items: [
       { label: "Mushola" },
       { label: "Pendopo" },
@@ -12,7 +12,7 @@ export const galeri_translations = {
     ],
   },
   en: {
-    title: "Gallery",
+    title: "GALLERY",
     items: [
       { label: "Prayer Room" },
       { label: "Pendopo" },

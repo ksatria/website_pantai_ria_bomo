@@ -1,6 +1,6 @@
 export const about_translations = {
   id: {
-    heading: "Temukan Ketenangan di Pantai Ria Bomo",
+    heading: ["Temukan Kedamaian di", " Pantai Ria Bomo"],
     subheading:
       "Surga Tersembunyi untuk Liburan Istimewa Anda – Ciptakan Kenangan Tak Terlupakan di Tepi Pantai.",
     descHeading: "Pantai Ria Bomo: Surga Tersembunyi di Pesisir Banyuwangi",
@@ -16,24 +16,74 @@ export const about_translations = {
               langit senja. Berbagai kuliner khas lokal juga siap memanjakan
               lidah Anda.`,
     schedule: "Jadwal Mingguan",
-    days: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"],
+    days: [
+      {
+        day: "Senin",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Selasa",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Rabu",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Kamis",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Jumat",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Sabtu",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Minggu",
+        time: "08.00 - 17.00 WIB",
+      },
+    ],
     callNow: "Telepon Sekarang",
   },
   en: {
-    heading: "Find Peace at Ria Bomo Beach",
+    heading: ["Find Peace at", " Ria Bomo Beach"],
     subheading:
       "A Hidden Paradise for Your Special Holiday – Create Unforgettable Memories by the Beach.",
     descHeading: "Ria Bomo Beach: A Hidden Gem on Banyuwangi's Coast",
     desc: `Ria Bomo Beach, a hidden gem on the eastern tip of Java, offers pristine natural beauty and alluring tranquility. Located in Bomo Village, Blimbingsari District, Banyuwangi Regency, this beach offers a different holiday experience. An ideal destination for special occasions, Ria Bomo Beach is the perfect place to enjoy time with family and loved ones. Experience the thrill of ngabuburit (waiting for the breaking of the fast) with a stunning sunset, or enjoy a gathering together under the twilight sky. A variety of local culinary delights are also ready to pamper your palate.`,
     schedule: "Weekly Schedule",
     days: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
+      {
+        day: "Monday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Tuesday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Wednesday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Thursday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Friday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Saturday",
+        time: "08.00 - 17.00 WIB",
+      },
+      {
+        day: "Sunday",
+        time: "08.00 - 17.00 WIB",
+      },
     ],
     callNow: "Call Now",
   },

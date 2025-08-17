@@ -26,20 +26,23 @@ export default function Fasilitas({ language = "id" }) {
   return (
     <motion.section
       id="fasilitas"
-      className="py-10 scroll-smooth"
+      className="py-10 bg-[#002D72] text-white scroll-smooth"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      // viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.h2
-        className="text-3xl font-semibold ml-4 md:ml-34 py-10 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {language === "en" ? "Facilities" : "Fasilitas"}
-      </motion.h2>
+      <div className="flex flex-col pb-12 items-center">
+        <motion.h2
+          className="text-3xl font-semibold text-center mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {language === "en" ? "FACILITIES" : "FASILITAS"}
+        </motion.h2>
+        <div className="h-1 w-36 bg-yellow-400"></div>
+      </div>
 
       <motion.div
         className="grid grid-cols-2 px-4 md:px-34 md:grid-cols-4 gap-8 justify-center"
@@ -56,7 +59,7 @@ export default function Fasilitas({ language = "id" }) {
           >
             <img src={item.icon} alt={item.name} className="w-12 h-12" />
             <p className="mt-2 font-medium">{item.name}</p>
-            <p className="mt-2 text-sm text-gray-600">{item.description}</p>
+            <p className="mt-2 text-sm">{item.description}</p>
           </motion.div>
         ))}
       </motion.div>

@@ -5,7 +5,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useRef } from "react";
-import CardItem from "./CardItem";
+import CardItem from "./partials/CardItem";
 import { layanan_translations } from "@/utils/layanan_translations";
 import { motion } from "framer-motion";
 
@@ -34,20 +34,23 @@ export default function CardCarousel({ language = "id" }) {
 
   return (
     <section id="layanan" className="scroll-smooth">
-      <motion.h2
-        className="text-3xl font-semibold ml-4 md:ml-34 py-10 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {language === "en" ? "Services" : "Layanan"}
-      </motion.h2>
+      <div className="flex flex-col pb-12 items-center">
+        <motion.h2
+          className="text-3xl font-semibold text-center mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {language === "en" ? "SERVICES" : "LAYANAN"}
+        </motion.h2>
+        <div className="h-1 w-36 bg-yellow-400"></div>
+      </div>
 
       <div className="relative w-full flex justify-center">
         <button
           onClick={handlePrev}
-          className="absolute hidden md:block left-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+          className="absolute hidden md:block left-12 top-1/2 -translate-y-1/2 z-10 bg-[#00AEEF] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
             className="w-6 h-6 text-white"
@@ -67,7 +70,7 @@ export default function CardCarousel({ language = "id" }) {
 
         <button
           onClick={handleNext}
-          className="absolute hidden md:block right-12 top-1/2 -translate-y-1/2 z-10 bg-[#D35F1C] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+          className="absolute hidden md:block right-12 top-1/2 -translate-y-1/2 z-10 bg-[#00AEEF] text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition"
         >
           <svg
             className="w-6 h-6 text-white"

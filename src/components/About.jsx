@@ -1,6 +1,7 @@
 import { about_translations } from "@/utils/about_translations";
 import { FaPhoneVolume } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Jadwal from "./partials/Jadwal";
 
 export default function About({ language = "id" }) {
   const t = about_translations[language];
@@ -9,20 +10,23 @@ export default function About({ language = "id" }) {
     <motion.section
       id="about"
       className="bg-white pt-30 px-4 md:px-34 scroll-smooth"
-      initial={{ opacity: 0, y: 50 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }} 
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-[#1E1B4B] mb-2">
-            {t.heading}
+            {t.heading[0]}
+            <span className="italic bg-gradient-to-r from-sky-500 to-blue-700 bg-clip-text text-transparent">
+              {t.heading[1]}
+            </span>
           </h1>
           <p className="text-sm md:text-lg text-gray-600">{t.subheading}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 pt-8 md:grid-cols-3 gap-8 justify-between items-center">
           <motion.div
             className="md:col-span-2"
             initial={{ opacity: 0, x: -50 }}
@@ -38,7 +42,7 @@ export default function About({ language = "id" }) {
             </p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="bg-[#F9FAFB] border border-[#D35F1C] rounded-lg p-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -71,8 +75,19 @@ export default function About({ language = "id" }) {
                 </div>
               </div>
             </div>
+          </motion.div> */}
+
+          <motion.div
+            className="p-8"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <img src="/images/logo-pantai-ria-bomo.png" alt="" />
           </motion.div>
         </div>
+        <Jadwal language={language} />
       </div>
     </motion.section>
   );
