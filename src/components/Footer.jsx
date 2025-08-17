@@ -94,7 +94,7 @@ export default function Footer({ language = "id" }) {
             </div>
             <div className="w-full h-[1px] md:w-[1px] md:h-36  bg-white"></div>
 
-            <PengunjungCard language={language} />
+            {/* <PengunjungCard language={language} /> */}
           </div>
           <div className="mt-8 text-sm md:text-base left-0 border-gray-200 pt-6 text-white text-center bottom-0">
             &copy; Copyright Tim Pengabdian Politeknik Negeri Banyuwangi
