@@ -7,15 +7,14 @@ export default function About({ language = "id" }) {
   const t = about_translations[language];
 
   return (
-    <motion.section
-      id="about"
-      className="bg-white pt-30 px-4 md:px-34 scroll-smooth"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="bg-white pt-30 px-4 md:px-34 scroll-smooth">
+      <motion.div
+        className="max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-[#1E1B4B] mb-2">
             {t.heading[0]}
@@ -88,7 +87,7 @@ export default function About({ language = "id" }) {
           </motion.div>
         </div>
         <Jadwal language={language} />
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }

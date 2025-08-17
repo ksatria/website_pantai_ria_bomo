@@ -90,7 +90,7 @@ export default function Hero({ language = "id" }) {
           {t.desc}
         </motion.p>
 
-        <motion.div
+        {/* <motion.div
           className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{
@@ -105,7 +105,7 @@ export default function Hero({ language = "id" }) {
           >
             {t.button}
           </a>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       <div className="absolute inset-0 bg-black opacity-30 z-0" />

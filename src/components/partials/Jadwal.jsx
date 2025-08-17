@@ -1,10 +1,17 @@
 import { about_translations } from "@/utils/about_translations";
+import { motion } from "framer-motion";
 
 export default function Jadwal({ language = "id" }) {
   const t = about_translations[language];
 
   return (
-    <div className="py-10  px-6">
+    <motion.div
+      className="py-10  px-6"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      viewport={{ once: true }}
+    >
       <div className="mb-6">
         <div className="h-1 w-38 bg-yellow-400 mb-2"></div>
         <h2 className="text-lg font-semibold text-blue-800">{t.schedule}</h2>
@@ -25,6 +32,6 @@ export default function Jadwal({ language = "id" }) {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
