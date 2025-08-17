@@ -34,71 +34,67 @@ export default function Footer({ language = "id" }) {
       </div>
 
       <footer className="bg-[#002D72] w-full py-12 px-6 text-white md:px-16">
-        <div className="bg-[url('/images/waves.svg')] bg-repeat w-full md:py-10 rounded-xl">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-            <motion.div
-              className="flex-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src="/images/logo-pantai-ria-bomo.png"
-                alt="Bomo Beach Logo"
-                className="w-18 md:w-40 h-auto transition-transform duration-300 hover:scale-105"
-              />
-            </motion.div>
-            <div className="flex md:flex-none">
-              <motion.div
-                className="flex-1 text-sm md:text-base"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="font-semibold mb-4">{t.kontak}</h2>
-                <ul className="space-y-3 ">
-                  <li className="flex items-center gap-2 ">
-                    <FaWhatsapp /> +62 812-1635-7836
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/pantai_ria_bomo"
-                      className="flex items-center gap-2 "
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram /> pantai_ria_bomo
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-2 ">
-                    <FaTiktok /> pantai.ria.bomobwi
-                  </li>
-                </ul>
-              </motion.div>
-              <motion.div
-                className="flex-1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="font-semibold mb-4">{t.lokasi}</h2>
-                <p className=" leading-relaxed ">
-                  Jl. Pantai Bomo, Dusun Krajan, Kec Rogojampi,
-                  <br />
-                  Kabupaten Banyuwangi
-                </p>
-              </motion.div>
-            </div>
-            {/* <div className="w-full h-[1px] md:w-[1px] md:h-36  bg-white"></div> */}
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-start gap-12">
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src="/images/logo-pantai-ria-bomo.png"
+              alt="Bomo Beach Logo"
+              className="w-18 md:w-40 h-auto transition-transform duration-300 hover:scale-105"
+            />
+          </motion.div>
+          <motion.div
+            className="flex-1 text-sm md:text-base"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-semibold mb-4">{t.kontak}</h2>
+            <ul className="space-y-3 ">
+              <li className="flex items-center gap-2 ">
+                <FaWhatsapp /> +62 812-1635-7836
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/pantai_ria_bomo"
+                  className="flex items-center gap-2 "
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram /> pantai_ria_bomo
+                </a>
+              </li>
+              <li className="flex items-center gap-2 ">
+                <FaTiktok /> pantai.ria.bomobwi
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-semibold mb-4">{t.lokasi}</h2>
+            <p className=" leading-relaxed ">
+              Jl. Pantai Bomo, Dusun Krajan, Kec Rogojampi,
+              <br />
+              Kabupaten Banyuwangi
+            </p>
+          </motion.div>
+        </div>
+        {/* <div className="w-full h-[1px] md:w-[1px] md:h-36  bg-white"></div> */}
 
-            {/* <PengunjungCard language={language} /> */}
-          </div>
-          <div className="mt-8 text-sm md:text-base left-0 border-gray-200 pt-6 text-white text-center bottom-0">
-            &copy; Copyright Tim Pengabdian Politeknik Negeri Banyuwangi
-          </div>
+        {/* <PengunjungCard language={language} /> */}
+        <div className="mt-8 text-sm md:text-base left-0 border-gray-200 pt-6 text-white text-center bottom-0">
+          &copy; Copyright Tim Pengabdian Politeknik Negeri Banyuwangi
         </div>
       </footer>
     </section>

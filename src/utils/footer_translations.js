@@ -1,7 +1,7 @@
 export const footer_translations = {
   id: {
     kontak: "Kontak",
-    lokasi: "lokasi",
+    lokasi: "Lokasi",
     pengunjung: "Pengunjung",
     hari_ini: "hari ini",
     jumlah: "jumlah",
